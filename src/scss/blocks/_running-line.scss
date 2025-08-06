@@ -1,0 +1,51 @@
+@use '../variables' as *;
+@use '../mixins';
+
+.running-line {
+  width: 100%;
+  background-color: $main-accent-color;
+  overflow: hidden;
+  position: relative;
+  &__container {
+    display: flex;
+    min-width: max-content;
+    align-items: center;
+    padding: 18px 0;
+    animation: runningLine 30s linear infinite;
+    @keyframes runningLine {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  }
+  &__text {
+    color: $main-white;
+    line-height: 110%;
+    font-size: 22px;
+    padding: 0 12px;
+    margin: 0;
+    @include mixins.merriweather-text-style;
+    text-align: left;
+    display: block;
+    text-transform: uppercase;
+    white-space: nowrap;
+    position: relative;
+    flex-shrink: 0;
+    max-width: min-content;
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 6px;
+      height: 6px;
+      background-color: $main-white;
+      border-radius: 50%;
+      top: 50%;
+      right: -6px;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

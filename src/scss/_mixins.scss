@@ -1,0 +1,17 @@
+@use './variables' as *;
+
+@mixin merriweather-text-style {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+@mixin golos-text-style($font-weght) {
+  font-family: "Golos Text", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $font-weght;
+  font-style: normal;
+}

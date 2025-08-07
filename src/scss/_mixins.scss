@@ -1,9 +1,9 @@
 @use './variables' as *;
 
-@mixin merriweather-text-style {
+@mixin merriweather-text-style($font-weght) {
   font-family: "Merriweather", serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: $font-weght;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;

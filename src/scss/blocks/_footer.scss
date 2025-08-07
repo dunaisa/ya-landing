@@ -1,0 +1,27 @@
+@use '../variables' as *;
+@use '../mixins';
+
+.footer {
+  width: 100%;
+  background-color: #E9DED4;
+  padding: 40px 0 72px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  @media screen and (max-width: 425px) {
+    padding-bottom: 60px;
+  }
+  &__container {
+    max-width: 1262px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  &__text {
+    color: $main-gray;
+    line-height: 120%;
+    font-size: 16px;
+    @include mixins.golos-text-style(400);
+    opacity: 60%;
+  }
+}

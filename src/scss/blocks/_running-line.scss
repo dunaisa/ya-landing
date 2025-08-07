@@ -20,6 +20,9 @@
         transform: translateX(-50%);
       }
     }
+    @media screen and (max-width: 425px) {
+      padding: 10px 0;
+    }
   }
   &__text {
     color: $main-white;
@@ -27,7 +30,7 @@
     font-size: 22px;
     padding: 0 12px;
     margin: 0;
-    @include mixins.merriweather-text-style;
+    @include mixins.merriweather-text-style(400);
     text-align: left;
     display: block;
     text-transform: uppercase;
@@ -46,6 +49,9 @@
       top: 50%;
       right: -6px;
       transform: translate(-50%, -50%);
+    }
+    @media screen and (max-width: 425px) {
+      font-size: 16px;
     }
   }
 }

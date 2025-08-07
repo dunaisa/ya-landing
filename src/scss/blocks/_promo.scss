@@ -14,7 +14,7 @@
     content: '';
     display: block;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -27,6 +27,9 @@
     background-size: cover;
     background-position: center center;
     z-index: 4;
+    @media screen and (max-width: 900px) {
+      height: 100%;
+    }
   }
  
   &__bg {
@@ -52,7 +55,32 @@
       object-fit: cover;
       z-index: 3;
       @media screen and (max-width: 900px) {
+        z-index: 5;
+      }
+      &--desk {
+        @media screen and (max-width: 900px) {
+          display: none;
+        }
+      }
+      &--mob {
         display: none;
+        @media screen and (max-width: 900px) {
+          display: block;
+          max-height: 45%;
+          width: auto;
+          right: -20%;
+          left: auto;
+        }
+        @media screen and (max-width: 600px) {
+          max-height: 40%;
+          right: -10%;
+        }
+        @media screen and (max-width: 520px) {
+          max-height: 30%;
+        }
+        @media screen and (max-width: 375px) {
+          max-height: 28%;
+        }
       }
     }
     &-pawn {
@@ -100,12 +128,12 @@
       object-fit: contain;
       transform: translateX(50%);
       z-index: 2;
-      @media screen and (max-width: 1627px){
+      @media screen and (max-width: 1627px) {
         right: calc(100vw / 2 - 443.5px);    
      }
-     @media screen and (max-width: 900px) {
-      display: none;
-    }
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
     }
     &-qween {
       display: block;
@@ -117,12 +145,12 @@
       object-fit: contain;
       transform: translateX(50%);
       z-index: 2;
-      @media screen and (max-width: 1627px){
+      @media screen and (max-width: 1627px) {
         right: calc(100vw / 2 - 113.5px);    
-     }
-     @media screen and (max-width: 900px) {
-      display: none;
-    }
+      }
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
     }
   }
   &__container {
@@ -169,6 +197,9 @@
       font-size: 16.65px;
       @include mixins.golos-text-style(700);      
     }
+    @media screen and (max-width: 425px) {
+      margin-bottom: 40px;
+    }
   }
   &__title {
     text-transform: uppercase;
@@ -177,7 +208,7 @@
     font-size: 60px;
     padding: 0;
     margin: 0 0 24px;
-    @include mixins.merriweather-text-style;
+    @include mixins.merriweather-text-style(400);
     span {
       display: block;
       width: 100%;
@@ -198,6 +229,9 @@
     @media screen and (max-width: 900px) {
       justify-self: center;
     }
+    @media screen and (max-width: 425px) {
+      font-size: 36px;
+    }
   }
   &__description {
     color: $main-gray;
@@ -207,6 +241,10 @@
     margin: 0 0 40px;
     @include mixins.golos-text-style(400);
     text-align: center;
+    @media screen and (max-width: 425px) {
+      text-align: left;
+      margin-bottom: 32px;
+    }
   }
   &__btns-container {
     display: flex;
@@ -216,6 +254,9 @@
     @media screen and (max-width: 1250px) {
       flex-direction: column;
       gap: 20px;
+    }
+    @media screen and (max-width: 425px) {
+      gap: 14px;
     }
   }
   &__btn {
@@ -243,9 +284,6 @@
         border: 2px solid $tertiary-accent-color;
         color: #1F1F1F;
       }
-      @media screen and (max-width: 900px) {
-
-      }
     }
     &--white {
       color: #1F1F1F;
@@ -266,6 +304,11 @@
       max-width: 80%;
       padding: 20px 0;
     }
+    @media screen and (max-width: 425px) {
+      max-width: 335px;
+      padding: 18px 0;
+    }
+
 
   }
   &__ellipse {
@@ -281,24 +324,9 @@
       margin-top: -15%;
       padding-right: 20px;
       padding-left: 20px;
-      &::before {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url(../images/city-mob.png);
-        background-blend-mode: color-burn;
-        mix-blend-mode: color-burn;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        z-index: 4;
-      }
+    }
+    @media screen and (max-width: 425px) {
+      margin-top: -20%;
     }
     &-container {
       border-radius: 50%;

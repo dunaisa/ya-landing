@@ -7,6 +7,9 @@
   align-items: center;
   width: 100%;
   margin-bottom: 200px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 120px;
+  }
   &__container {
     max-width: 1262px;
     width: 100%;
@@ -97,9 +100,6 @@
       background-size: cover;
       background-position: center center;
       z-index: 4;
-      // @media screen and (max-width: 900px) {
-      //   height: 100%;
-      // }
     }
   }
   &__table {

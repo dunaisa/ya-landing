@@ -10,6 +10,9 @@
   @media screen and (max-width: 1200px) {
     overflow: visible;
   }
+  @media screen and (max-width: 768px) {
+    margin-bottom: 120px;
+  }
   &__container {
     max-width: 1262px;
     width: 100%;
@@ -20,26 +23,16 @@
     position: relative;
   }
   &__title {
-    text-transform: uppercase;
-    color: $main-gray;
-    line-height: 120%;
-    font-size: 54px;
-    padding: 0;
-    margin: 0;
-    @include mixins.merriweather-text-style(400);
-    display: inline;
+    @include mixins.h2-text-style;
+    & {
+      display: inline;
+    }
     &-wrapper {
       max-width: 806px;
       margin-bottom: 54px;
       @media screen and (max-width: 700px) {
         margin-bottom: 20px;
       }
-    }
-    @media screen and (max-width: 1250px) {
-      font-size: 44px;
-    }
-    @media screen and (max-width: 1070px) {
-      font-size: 34px;
     }
   }
   &__description {
